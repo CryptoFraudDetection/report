@@ -1,0 +1,107 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{nowidow}
+\usepackage{geometry}
+
+\geometry{
+    a4paper,
+    left=25mm,
+    right=25mm,
+    top=25mm,
+    bottom=25mm
+}
+
+%\usepackage[style=apa]{biblatex}
+%\addbibresource{ref.bib}
+
+\title{Crypto-Fraud\\Challenge X Exposé}
+\author{Aaron Brülisauer, Can-Elian Barth, Florian Baumgartner, Roy Aregger\\ 4. Semester \\ BSc Data Science \\ FHNW}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+%\listoffigures
+
+\section{Ziel}
+
+Das Ziel der Challenge wurde in zwei Phasen unterteilt:
+
+\begin{enumerate}
+   \item Kryptowährungen und small-Cap-Aktien mithilfe von Deep Learning und Zeitreihenanalyse klassifizieren. Ziel ist es hierbei, dass wir uns in die Materie einarbeiten. Wir machen uns nicht die Illusion den heiligen Gral zu finden und die nächste Generation der Krypto-Handelsrobotern zu erschaffen. Dazu gehört natürlich, uns auf die zweite Etappe vorzubereiten, indem wir Daten beschafffen und richtig zu labeln.
+   \item Hauptsächlich Kryptowährungen auf Fraud/Trash mit Deep Learning und Zeitreihenanalysen anhand von Anomalien zu klassifizieren. Ziel ist es, Etappe 1 und Etappe 2 zusammenzuführen und somit "rising Star"-Kryptowährungen von fraud/trash Kryptowährungen zu unterscheiden.
+\end{enumerate}
+
+
+\section{Datenquellen}
+
+Aktien- und Kryptokurse sowie andere Informationen über Kryptowährungen holen wir von verschiedenen Seiten. Beispiele:
+
+\begin{enumerate}
+    \item coinmarketcap.com
+    \item coincodex.com
+    \item Yahoo Finance
+\end{enumerate}
+
+\section{Vorgehen}
+
+\begin{enumerate}
+    \item Datenbeschaffung und EDA \& Preprocessing 
+    \item Zeitreihenanalyse
+    \item Anwendung ML (simplere Modelle)
+    \item Anwendung Deep Learning
+\end{enumerate}
+
+
+\subsection{Modelierung}
+
+Ziel in diese Semester ist, die Preisentwicklung als positiv oder negativ zu klassifizieren.
+
+\begin{enumerate}
+    \item Baselinemodelle: gleitende Durchschnitte, Arima, ...
+    \item Anwendung Zeitreihenmodelle (z. B. LSTM)
+    \item Ähnlichkeiten von Kursmustern suchen
+    \item kNN um Kurs vorherzusagen
+\end{enumerate}
+
+\subsection{Modelevaluation}
+
+Allgemein werden wir uns die Frage stellen, wie wir sicherstellen können, dass unsere Tests aus wissenschaftlicher Sicht sinnvoll sind. Dies um sicherzustellen, dass wir Zufallstreffer nicht fälschlicherweise als Erfolg einstufen.
+
+\begin{enumerate}
+    \item Backtesting auf historischen Daten
+    \item Timeseries-Crossvalidation: z. B. Sliding Window
+    \item Statistische Signifikanztests: z. B. Anova
+    \item Scores wie z. B. MAPE, NRMSE, MAE, MSE können getestet werden. Es bleibt zu beachten, dass Preisdifferenzen relativ zum Preis sind, daher wird erwartet, dass z. B. MAPE sinnvoller sein wird als MAE.
+    \item Kritische Analyse der eigenen Signifikanztests auf p-Hacking.
+\end{enumerate}
+
+\section{Deliverables}
+
+
+\begin{enumerate}
+    \item Bestes Modell
+    \item Evaluierung des besten Modells
+    \item Allgemeine Analysen
+    \item Evaluation des Vorgehens aus mathematischer bzw. wissenschaftlicher Sicht
+\end{enumerate}
+
+\section{Kompetenzen}
+
+\begin{enumerate}
+    \item del
+    \item spz
+    \item aml
+    \item Wissenschaftliche Signifikanz von Modellen evaluieren
+\end{enumerate}
+
+%\printbibliography
+
+\end{document}

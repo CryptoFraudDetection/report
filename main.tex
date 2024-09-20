@@ -1,0 +1,81 @@
+\documentclass[final]{fhnwreport}         %[mode] = draft or final
+\input{fhnwheader}                        %loads all packages, definitions and settings	
+
+%%%%% Bibliographie entweder im IEEE- oder im APA-Stil:
+%\usepackage[style=ieee,urldate=comp,backend=biber]{biblatex}
+\usepackage[style=apa,urldate=comp,backend=biber]{biblatex}
+%%%%%
+\addbibresource{literature/manual_ref.bib}
+\addbibresource{literature/references.bib}
+
+\title{Krypto-Frauddetection}
+\author{Challenge-X-Bericht}
+\date{Windisch, Januar 2025}
+
+\begin{document}
+
+\pagenumbering{roman}	
+
+%%---TITLEPAGE---------------------------------------------------------------------------
+\selectlanguage{ngerman}                  %ngerman or english
+\maketitle
+
+\vfill
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{titleimage.png}
+\end{figure}
+
+\vfill
+
+\begin{tabular}{@{}p{5cm} l}
+Student                    &    Florian Baumgartner\\
+                           &    Aaron Brülisauer\\
+                           &    Can-Elian Barth\\[2ex]
+Fachexperte                &    Moritz Kirschmann\\[2ex]
+                           &    Adrian Brändli\\[2ex]
+Studiengang                &    BSc DS\\[4ex]
+
+\multicolumn{2}{@{}l}{Fachhochschule Nordwestschweiz, Hochschule für Technik}
+\end{tabular}
+
+\vspace*{4ex}
+\clearpage
+
+%%---ABSTRACT----------------------------------------------------------------------------
+\selectlanguage{ngerman}				%ngerman or english
+\thispagestyle{empty}
+\include{sections/abstract}
+
+%%---TABLE OF CONTENTS-------------------------------------------------------------------	
+\selectlanguage{ngerman}				%ngerman or english
+\tableofcontents
+\clearpage
+
+\listoffigures
+%\listoftables
+\cleardoublepage
+
+%%---TEXT--------------------------------------------------------------------------------
+\pagenumbering{arabic}
+\include{sections/einleitung}
+\include{sections/vorgehen}
+\include{sections/ergebnisse}
+\include{sections/evaluation}
+\include{sections/ausblick}
+
+%%---BIBLIOGRAPHY------------------------------------------------------------------------
+{\sloppypar
+\printbibliography[heading=bibintoc, title=Quellenverzeichnis]
+}
+
+%%---APPENDIX----------------------------------------------------------------------------
+%\include{sections/appendix}
+
+%%---NOTES for DEBUG---------------------------------------------------------------------
+%\newpage
+%\listoftodos[\section{Todo-Notes}]
+%\clearpage
+
+\end{document}

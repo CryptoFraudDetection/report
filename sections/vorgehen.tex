@@ -1,0 +1,18 @@
+\section{Vorgehen}
+
+Um sich auf die Thematik vorzubereiten hat sich jedes Gruppenmitglied mit dem grundlegenden Domänenwissen in Kryptowährungen angegeignet. Weitere Details betreffend dem Erarbeiten von Domänenwissen wird in diesem Bericht nicht weiter erwähnt.
+
+Als Datengrundlage werden die Preisverlaufsdaten von den Kryptowährungen Bitcoin, Ethereum, Basic Attention Token, Litecoin und der Indexe Gold \parencite{yf2024gld}, S\&P500 \parencite{yf2024sp500} mit der yfinance Python-Library von Yahoo Finance heruntergeladen. Für die Kryptowährungen sind Daten ab 2014 von  Yahoo-Finance vorhanden und für Gold und S\&P500 gibt es ältere Daten, doch diese werden nicht verwendet. Zu bemerken ist, dass Kryptowährungen auch am Wochenende gehandelt werden, die Indexe Gold und S\&P500 sind an herkömmlichen Börsen und werden also an Wochenenden und Feiertagen nicht gehandelt.
+
+In einem ersten Schritt müssen die Zeitreihen zuerst richtig verstanden werden, dehalb wird eine gründliche explorative Datenanalyse durchgeführt. Anschliessend werden die Daten mit einem geeigneten Preprocessing für die weitere Verwendung vorbereitet.
+Zum Preprocessing gehört auch das splitten der Daten in Trainings-, Validierungs- und Testdatensätze. Wichtig zu betonen ist, dass diese Splits chronologisch verlaufen sind. Dies ist wichtig bei Zeitreihen. Folgende Splits werden gemacht:
+
+\begin{itemize}
+    \item Die ersten 1800 Tage als Trainingsdatensatz
+    \item Tag 1801 bis 3100 (1300 Tage) als Validierungsdatensatz
+    \item Tag 3101 bis 3462 (362 Tage) als Testdatensatz
+\end{itemize}
+
+Anhand stochastischen Prozessen werden dann die Zeitreihen modelliert. Hierbei wird der Fokus auf Bitcoin und Ethereum gesetzt. Die Zeitreihen werden einzeln dekomponiert und die Residuen mit einem ARIMA-Model vorhergesagt. Ein weiterer Approach der Zeitreihenanalysen kann mit Deep Learning verfolgt werden. Es werden dort Siamese Networks, LSTMs mit Attention und Temporal Convolutional Networks (TCN) behandelt.
+
+Um zu prüfen, wie gut die implementierten Deep Learning-Modelle performen, wird ein Trader implementiert, der je nach Ausgabe der Modelle einkauft, haltet oder verkauft. Bei der Validierung und beim Testen wird die Walk-Forward-Methode angewendet. Dabei stehen dem Modell alle Daten bis zum aktuellen Tag ($T$) zur Verfügung, um den Preis des nächsten Tages ($T+1$) vorherzusagen. \parencite{Gray2018}
