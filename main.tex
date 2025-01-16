@@ -1,15 +1,12 @@
 \documentclass[final]{fhnwreport}         %[mode] = draft or final
 \input{fhnwheader}                        %loads all packages, definitions and settings	
 
-%%%%% Bibliographie entweder im IEEE- oder im APA-Stil:
-%\usepackage[style=ieee,urldate=comp,backend=biber]{biblatex}
 \usepackage[style=apa,urldate=comp,backend=biber]{biblatex}
-%%%%%
 \addbibresource{literature/manual_ref.bib}
 \addbibresource{literature/references.bib}
 
-\title{Krypto-Frauddetection}
-\author{Challenge-X-Bericht}
+\title{Crypto Fraud Detection}
+\author{Can-Elian Barth, Florian Baumgartner, Aaron Brülisauer}
 \date{Windisch, Januar 2025}
 
 \begin{document}
@@ -17,7 +14,7 @@
 \pagenumbering{roman}	
 
 %%---TITLEPAGE---------------------------------------------------------------------------
-\selectlanguage{ngerman}                  %ngerman or english
+\selectlanguage{english}                  %ngerman or english
 \maketitle
 
 \vfill
@@ -30,26 +27,22 @@
 \vfill
 
 \begin{tabular}{@{}p{5cm} l}
-Student                    &    Florian Baumgartner\\
-                           &    Aaron Brülisauer\\
-                           &    Can-Elian Barth\\[2ex]
-Fachexperte                &    Moritz Kirschmann\\[2ex]
-                           &    Adrian Brändli\\[2ex]
-Studiengang                &    BSc DS\\[4ex]
-
-\multicolumn{2}{@{}l}{Fachhochschule Nordwestschweiz, Hochschule für Technik}
+Subject Matter Expert (SME) &   Moritz Kirschmann\\[2ex]
+                            &   Adrian Brändli\\[2ex]
+Degree Program              &   BSc DS\\[4ex]
+Institution                 &   University of Applied Sciences and Arts\\
+                            &   Northwestern Switzerland (FHNW)\\[2ex]
+School                      &   School of Computer Science
 \end{tabular}
 
 \vspace*{4ex}
 \clearpage
 
 %%---ABSTRACT----------------------------------------------------------------------------
-\selectlanguage{ngerman}				%ngerman or english
 \thispagestyle{empty}
-\include{sections/abstract}
+\include{sections/01abstract}
 
 %%---TABLE OF CONTENTS-------------------------------------------------------------------	
-\selectlanguage{ngerman}				%ngerman or english
 \tableofcontents
 \clearpage
 
@@ -59,11 +52,11 @@ Studiengang                &    BSc DS\\[4ex]
 
 %%---TEXT--------------------------------------------------------------------------------
 \pagenumbering{arabic}
-\include{sections/einleitung}
-\include{sections/vorgehen}
-\include{sections/ergebnisse}
-\include{sections/evaluation}
-\include{sections/ausblick}
+\include{sections/02introduction}
+\include{sections/20data_collection}
+\include{sections/50results}
+\include{sections/60conclusion}
+\include{sections/80future_work}
 
 %%---BIBLIOGRAPHY------------------------------------------------------------------------
 {\sloppypar
@@ -71,11 +64,11 @@ Studiengang                &    BSc DS\\[4ex]
 }
 
 %%---APPENDIX----------------------------------------------------------------------------
-%\include{sections/appendix}
+\include{sections/90appendix}
 
 %%---NOTES for DEBUG---------------------------------------------------------------------
-%\newpage
-%\listoftodos[\section{Todo-Notes}]
-%\clearpage
+\newpage
+\listoftodos[\section{Todo-Notes}]
+\clearpage
 
 \end{document}
