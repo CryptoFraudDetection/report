@@ -1,0 +1,30 @@
+% Essential Packages
+\usepackage[english]{babel}            % Language support
+\usepackage[T1]{fontenc}              % Font encoding
+\usepackage{mathptmx}                 % Times New Roman with math support
+\usepackage{microtype}                % Better typography
+\usepackage{graphicx}                 % Graphics support
+\usepackage{float}                    % Better float placement
+
+% Citation and References
+\usepackage[style=apa,urldate=comp,backend=biber]{biblatex}
+\usepackage{csquotes}                 % Required for biblatex
+
+% Math and Tables
+\usepackage{amsmath}                  % Math support
+\usepackage{booktabs}                 % Better tables
+\usepackage{tabularx}                 % Flexible tables
+\usepackage{multirow}                 % Multirow cells in tables
+
+% PDF and Hyperlinks
+\usepackage{hyperref}                 % Hyperlinks
+\usepackage[capitalize]{cleveref}     % Better cross-referencing
+
+% Set margin width for todos
+\setlength{\marginparwidth}{2cm}      % Add this line here
+
+% TODO
+\usepackage[colorinlistoftodos,textsize=small]{todonotes}  % For todo notes and list
+
+% Settings
+\graphicspath{{./graphics/}}          % Path to graphics

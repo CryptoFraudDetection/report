@@ -1,74 +1,68 @@
-\documentclass[final]{fhnwreport}         %[mode] = draft or final
-\input{fhnwheader}                        %loads all packages, definitions and settings	
-
-\usepackage[style=apa,urldate=comp,backend=biber]{biblatex}
+\documentclass[10pt,twocolumn]{article}
+\input{paperheader}
 \addbibresource{literature/manual_ref.bib}
 \addbibresource{literature/references.bib}
 
-\title{Crypto Fraud Detection}
-\author{Can-Elian Barth, Florian Baumgartner, Aaron Brülisauer}
-\date{Windisch, Januar 2025}
+\title{\large Crypto Fraud Detection}  % \large makes the title less prominent
+\author{%
+    Can-Elian Barth\\
+    \small{canelian.barth@students.fhnw.ch} \and
+    Florian Baumgartner\\
+    \small{florian.baumgartner1@students.fhnw.ch} \and
+    Aaron Brülisauer\\
+    \small{aaron.bruelisauer@students.fhnw.ch}
+    \\[2ex]
+    \small{School of Computer Science}\\
+    \small{University of Applied Sciences and Arts Northwestern Switzerland (FHNW)}
+}
+\date{January 2025}
 
 \begin{document}
+\twocolumn[
+    \begin{@twocolumnfalse}
+    \maketitle
+    
+    \begin{abstract}
+    \input{sections/01abstract}
+    
+    \vspace{2ex}
+    \noindent\textbf{Keywords:} Cryptocurrencies, Bitcoin, Fraud, Web Data Acquisition, Social Media, Reddit, X (Twitter), Time Series Analysis, MultiRocket, LSTM
+    
+    \vspace{2ex}
+    \noindent\textbf{Acknowledgments:} We, the authors, would like to extend our special thanks to Gabriel Torres Gamez for his collaboration with us on gathering and conducting exploratory data analysis (EDA) on social media data, as well as to Moritz Kirschmann and Adrian Brändli for their guidance throughout this Challenge-X.
+    
+    \vspace{1ex}
+    \noindent\textbf{Note:} The texts written in this paper may have been partially generated or edited with the assistance of ChatGPT \parencite{noauthor_chatgpt_2024}.
+    \end{abstract}
+    \end{@twocolumnfalse}
+]
 
-\pagenumbering{roman}	
 
-%%---TITLEPAGE---------------------------------------------------------------------------
-\selectlanguage{english}                  %ngerman or english
-\maketitle
+% Main content
+\section{Introduction}
+\input{sections/02introduction}
 
-\vfill
+\section{Data Collection}
+\input{sections/20data_collection}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\linewidth]{titleimage.png}
-\end{figure}
+\section{Results}
+\input{sections/50results}
 
-\vfill
+\section{Conclusion}
+\input{sections/60conclusion}
 
-\begin{tabular}{@{}p{5cm} l}
-Subject Matter Expert (SME) &   Moritz Kirschmann\\[2ex]
-                            &   Adrian Brändli\\[2ex]
-Degree Program              &   BSc DS\\[4ex]
-Institution                 &   University of Applied Sciences and Arts\\
-                            &   Northwestern Switzerland (FHNW)\\[2ex]
-School                      &   School of Computer Science
-\end{tabular}
+\section{Future Work}
+\input{sections/80future_work}
 
-\vspace*{4ex}
-\clearpage
+% Bibliography
+\printbibliography[heading=bibintoc, title=References]
 
-%%---ABSTRACT----------------------------------------------------------------------------
-\thispagestyle{empty}
-\include{sections/01abstract}
+% Appendix (if needed)
+\appendix
+\section{First Appendix}
+\input{sections/90appendix}
 
-%%---TABLE OF CONTENTS-------------------------------------------------------------------	
-\tableofcontents
-\clearpage
-
-\listoffigures
-%\listoftables
-\cleardoublepage
-
-%%---TEXT--------------------------------------------------------------------------------
-\pagenumbering{arabic}
-\include{sections/02introduction}
-\include{sections/20data_collection}
-\include{sections/50results}
-\include{sections/60conclusion}
-\include{sections/80future_work}
-
-%%---BIBLIOGRAPHY------------------------------------------------------------------------
-{\sloppypar
-\printbibliography[heading=bibintoc, title=Quellenverzeichnis]
-}
-
-%%---APPENDIX----------------------------------------------------------------------------
-\include{sections/90appendix}
-
-%%---NOTES for DEBUG---------------------------------------------------------------------
-\newpage
+% Remove debug notes for final paper
+%\newpage
 \listoftodos[\section{Todo-Notes}]
-\clearpage
-
 \end{document}
