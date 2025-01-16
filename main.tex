@@ -1,68 +1,172 @@
-\documentclass[10pt,twocolumn]{article}
-\input{paperheader}
-\addbibresource{literature/manual_ref.bib}
-\addbibresource{literature/references.bib}
+\documentclass[pdflatex,sn-apa]{sn-jnl}
 
-\title{\large Crypto Fraud Detection}  % \large makes the title less prominent
-\author{%
-    Can-Elian Barth\\
-    \small{canelian.barth@students.fhnw.ch} \and
-    Florian Baumgartner\\
-    \small{florian.baumgartner1@students.fhnw.ch} \and
-    Aaron Brülisauer\\
-    \small{aaron.bruelisauer@students.fhnw.ch}
-    \\[2ex]
-    \small{School of Computer Science}\\
-    \small{University of Applied Sciences and Arts Northwestern Switzerland (FHNW)}
-}
-\date{January 2025}
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
 
 \begin{document}
-\twocolumn[
-    \begin{@twocolumnfalse}
-    \maketitle
-    
-    \begin{abstract}
-    \input{sections/01abstract}
-    
-    \vspace{2ex}
-    \noindent\textbf{Keywords:} Cryptocurrencies, Bitcoin, Fraud, Web Data Acquisition, Social Media, Reddit, X (Twitter), Time Series Analysis, MultiRocket, LSTM
-    
-    \vspace{2ex}
-    \noindent\textbf{Acknowledgments:} We, the authors, would like to extend our special thanks to Gabriel Torres Gamez for his collaboration with us on gathering and conducting exploratory data analysis (EDA) on social media data, as well as to Moritz Kirschmann and Adrian Brändli for their guidance throughout this Challenge-X.
-    
-    \vspace{1ex}
-    \noindent\textbf{Note:} The texts written in this paper may have been partially generated or edited with the assistance of ChatGPT \parencite{noauthor_chatgpt_2024}.
-    \end{abstract}
-    \end{@twocolumnfalse}
-]
+
+\title[Article Title]{Crypto Fraud Detection}
+
+\author{\fnm{Can-Elian} \sur{Barth}}
+
+\author{\fnm{Florian} \sur{Baumgartner}}
+
+\author{\fnm{Aaron} \sur{Brülisauer}}
+
+\abstract{
+\textbf{Purpose:} The rapid growth of cryptocurrencies has been accompanied by a rise in fraudulent activities, presenting significant challenges to financial systems and regulatory frameworks. This research aims to detect fraudulent activity in cryptocurrency markets using financial data and social media interactions.
+
+\textbf{Methods:} The study utilizes open and close price data, alongside embeddings generated from Reddit and Twitter posts and comments, as primary features for predictive modeling. MultiRocket served as the main machine learning algorithm, effectively identifying patterns indicative of fraudulent behavior. Attempts were made to implement LSTM models and the ConvTran architecture (via \href{https://github.com/Navidfoumani/ConvTran}{ConvTran}), though these efforts were not completed.
+
+\textbf{Results:} MultiRocket successfully detected potential fraudulent activity based on the provided data features, showcasing its suitability for time series and embedding-based analysis. The unfinished implementation of LSTM and ConvTran models highlighted the complexity of these approaches and the need for further research.
+
+\textbf{Conclusion:} This study lays the groundwork for future advancements in fraud detection for cryptocurrency ecosystems. The use of financial and social media data for machine learning-driven analysis offers a promising direction, and ongoing efforts to refine and expand model capabilities can further enhance detection accuracy and scalability.
+}
+
+\keywords{Cryptocurrencies, Bitcoin, Fraud, Web Data Acquisition, Social Media, Reddit, X (Twitter), Time Series Analysis, MultiRocket, LSTM}
+
+\maketitle
+
+\section{Introduction}\label{intro}
+
+Idea...
+
+\section{Related Work}
+What did others do?
+
+\section{Preliminaries}\label{preliminaries}
+
+How this section should be done:
+
+In the context of a research paper, the section title "Preliminaries" is typically used to introduce foundational concepts, definitions, or background knowledge necessary to understand the main content of the paper. It serves as a preparatory section, providing readers with the theoretical tools, mathematical notations, or terminology that will be used throughout the subsequent sections.
+
+For instance, in a technical paper related to machine learning or time series analysis (like your project on cryptocurrency fraud detection), a "Preliminaries" section might include:
+
+    Definitions: Key terms, such as embeddings, MultiRocket, or LSTM, explained concisely.
+    Mathematical Notation: Explanation of symbols or equations used in models or analysis.
+    Frameworks or Tools: Brief description of essential algorithms (e.g., MultiRocket) or architectures referenced in the paper.
+
+This section ensures that readers, regardless of their familiarity with the subject, have a shared understanding of the critical elements before delving into the research's methodologies or results. It acts as a bridge between the general introduction and the detailed technical content.
 
 
-% Main content
-\section{Introduction}
-\input{sections/02introduction}
+\subsection{Crypto Stocks}\label{crypto_stocks}
 
-\section{Data Collection}
-\input{sections/20data_collection}
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
 
-\section{Results}
-\input{sections/50results}
+\subsection{Embedding}\label{embedding}
 
-\section{Conclusion}
-\input{sections/60conclusion}
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+
+\subsection{MultiRocket}\label{multirocket}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+
+\section{Data Collection}\label{data_collection}
+
+\subsection{Reddit Posts/Comments}\label{reddit}
+
+\subsection{X (Twitter) Posts}\label{twitter}
+
+\subsection{Price Data}\label{price}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+
+\section{Coin Labeling}
+
+How did we decide on fraud / non-fraud...
+
+\section{Scam Detection}
+
+\subsection{Data Pipeline}
+
+\subsection{Machine Learning}
+
+\subsection{Results}\label{sec2}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\section{Methods}\label{sec11}
+
+Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work. Authors are encouraged to include RIIDs where appropriate. 
+
+\section{Discussion}\label{sec12}
+
+Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 
+
+\section{Conclusion}\label{sec13}
+
+Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations. 
+
+In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements. 
 
 \section{Future Work}
-\input{sections/80future_work}
 
-% Bibliography
-\printbibliography[heading=bibintoc, title=References]
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
 
-% Appendix (if needed)
-\appendix
-\section{First Appendix}
-\input{sections/90appendix}
+\subsection{LSTM}
 
-% Remove debug notes for final paper
-%\newpage
-\listoftodos[\section{Todo-Notes}]
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\subsection{Other Deep Learning Approaches}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\backmatter
+
+\section*{Acknowledgements}
+
+
+\section*{Declarations}
+
+\begin{itemize}
+\item AI tools
+
+Parts of the text in this paper have been written or enhanced with the assistance of ChatGPT \cite{OpenAI2024}.
+
+\item Code availability 
+\item Author contribution
+\end{itemize}
+
+\begin{appendices}
+
+\section{Section title of first appendix}\label{secA1}
+
+An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
+
+%%=============================================%%
+%% For submissions to Nature Portfolio Journals %%
+%% please use the heading ``Extended Data''.   %%
+%%=============================================%%
+
+%%=============================================================%%
+%% Sample for another appendix section			       %%
+%%=============================================================%%
+
+%% \section{Example of another appendix section}\label{secA2}%
+%% Appendices may be used for helpful, supporting or essential material that would otherwise 
+%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+%% tables and equations etc.
+
+\end{appendices}
+
+\bibliography{literature/references,literature/manual_ref}
+
 \end{document}
