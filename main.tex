@@ -34,115 +34,139 @@
 \abstract{
 \textbf{Purpose:} The rapid growth of cryptocurrencies has been accompanied by a rise in fraudulent activities, presenting significant challenges to financial systems and regulatory frameworks. This research aims to detect fraudulent activity in cryptocurrency markets using financial data and social media interactions.
 
-\textbf{Methods:} The study utilizes open and close price data, alongside embeddings generated from Reddit and Twitter posts and comments, as primary features for predictive modeling. MultiRocket served as the main machine learning algorithm, effectively identifying patterns indicative of fraudulent behavior. Attempts were made to implement LSTM models and the ConvTran architecture (via \href{https://github.com/Navidfoumani/ConvTran}{ConvTran}), though these efforts were not completed.
+\textbf{Methods:} The study utilizes open and close price data, alongside embeddings generated from Reddit and Twitter posts and comments, as primary features for predictive modelling. MultiRocket served as the main machine learning algorithm, effectively identifying patterns indicative of fraudulent behaviour. Attempts were made to implement LSTM models and the ConvTran architecture (via \href{https://github.com/Navidfoumani/ConvTran}{ConvTran}), though these efforts were not completed.
 
 \textbf{Results:} MultiRocket successfully detected potential fraudulent activity based on the provided data features, showcasing its suitability for time series and embedding-based analysis. The unfinished implementation of LSTM and ConvTran models highlighted the complexity of these approaches and the need for further research.
 
 \textbf{Conclusion:} This study lays the groundwork for future advancements in fraud detection for cryptocurrency ecosystems. The use of financial and social media data for machine learning-driven analysis offers a promising direction, and ongoing efforts to refine and expand model capabilities can further enhance detection accuracy and scalability.
 }
 
-\keywords{Cryptocurrencies, Bitcoin, Fraud, Web Data Acquisition, Social Media, Reddit, X (Twitter), Time Series Analysis, MultiRocket, LSTM}
+\keywords{Cryptocurrencies, Bitcoin, Ethereum, Fraud, Web Data Acquisition, Social Media, Reddit, X (Twitter), Time Series Analysis, MultiRocket, LSTM, Deep Learning}
 
 \maketitle
 
 \section{Introduction}\label{intro}
 
-Idea...
+Others did research fraudulent transaction and price manipulation like Rug Pulls \citep{mazorra_do_not_rug_on_me_2022}.
 
-\section{Related Work}
+Research topic in context of scientific world
+
+motivation
+
+research questions that this project aims to answer
+
+\subsection{Related Work}\label{related_work}
 What did others do?
 
-\section{Preliminaries}\label{preliminaries}
+\subsection{Preliminaries}\label{preliminaries}
 
-How this section should be done:
+What knowledge is useful to read this paper?
 
-In the context of a research paper, the section title "Preliminaries" is typically used to introduce foundational concepts, definitions, or background knowledge necessary to understand the main content of the paper. It serves as a preparatory section, providing readers with the theoretical tools, mathematical notations, or terminology that will be used throughout the subsequent sections.
+\subsubsection{Crypto Exchanges}\label{crypto_stocks}
 
-For instance, in a technical paper related to machine learning or time series analysis (like your project on cryptocurrency fraud detection), a "Preliminaries" section might include:
+What are crypto exchanges and what is different from normal exchanges?
 
-    Definitions: Key terms, such as embeddings, MultiRocket, or LSTM, explained concisely.
-    Mathematical Notation: Explanation of symbols or equations used in models or analysis.
-    Frameworks or Tools: Brief description of essential algorithms (e.g., MultiRocket) or architectures referenced in the paper.
+\subsubsection{Embedding}\label{embedding}
 
-This section ensures that readers, regardless of their familiarity with the subject, have a shared understanding of the critical elements before delving into the research's methodologies or results. It acts as a bridge between the general introduction and the detailed technical content.
+Why and how were the posts/comments embedded?
 
+\subsubsection{MultiRocket}\label{multirocket}
 
-\subsection{Crypto Stocks}\label{crypto_stocks}
+What is MultiRocket?
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+\section{Methods}\label{methods}
 
-\subsection{Embedding}\label{embedding}
+1. gather data
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+2. use it
 
-\subsection{MultiRocket}\label{multirocket}
+\subsection{Data Collection}\label{data_collection}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+What was the data-gathering approach?
 
-\section{Data Collection}\label{data_collection}
+\subsubsection{Reddit Posts/Comments}\label{reddit}
 
-\subsection{Reddit Posts/Comments}\label{reddit}
+What data was gathered?
 
-\subsection{X (Twitter) Posts}\label{twitter}
+\subsubsection{X (Twitter) Posts}\label{twitter}
 
-\subsection{Price Data}\label{price}
+What was scraped from X?
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+\subsubsection{Price Data}\label{price}
 
-\section{Coin Labeling}
+What price data was used and where was it from?
 
-How did we decide on fraud / non-fraud...
+\subsection{Coin Labeling}\label{coin_labeling}
 
-\section{Scam Detection}
+How was the coins labeled as fraud / non-fraud?
 
-\subsection{Data Pipeline}
+\subsection{Scam Detection}\label{scam_detection}
 
-\subsection{Machine Learning}
+What is the idea, how scams are detected? -> ML
 
-\subsection{Results}\label{sec2}
+\subsubsection{Data Pipeline}\label{data_pipeline}
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+What was done after downloading the posts/comments and price data until np-arrays/torch-tensors were ready?
 
-\section{Methods}\label{sec11}
+\subsubsection{Machine Learning}\label{machine_learning}
 
-Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work. Authors are encouraged to include RIIDs where appropriate. 
+What was done on train data and how did it perform on val coins?
 
-\section{Discussion}\label{sec12}
+\section{Results}\label{results}
 
-Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 
+\subsection{Data Gathered / EDA}
 
-\section{Conclusion}\label{sec13}
+What and how much data in which time ranges was gathered?
 
-Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations. 
+What insights could be found with EDA?
 
-In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements. 
+\subsection{ML-Performance on Test Set}
 
-\section{Future Work}
+What was achieved on the test set?
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+\section{Discussion}\label{discussion}
 
-\subsection{LSTM}
+Discuss the results and what are the conclusions (interpret this findings in context)?
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+\subsection{Limitations}\label{limitation}
 
-\subsection{Other Deep Learning Approaches}
+In which ways were this approach and this project limited?
 
-Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+\subsection{Future Work}\label{future_work}
+
+Ideas for the future? How could they be tested/verified?
+
+\subsubsection{LSTM}\label{lstm}
+
+What was done and what would have to be done to finalize it?
+
+\subsubsection{Other Deep Learning Approaches}\label{deep_learning}
+
+What was done and what would have to be done to finalize it?
 
 \backmatter
 
 \section*{Acknowledgements}
 
+We, the authors, would like to extend our special thanks to Gabriel Torres Gamez for his collaboration with us on gathering and conducting exploratory data analysis (EDA) on social media data.
+
+We also wish to express our gratitude to Moritz Kirschmann and Adrian Brändli for their invaluable guidance throughout this Challenge-X. Moritz especially supported us in developing machine learning strategies and guiding the process from raw data to a functional ML model. Adrian provided critical assistance in defining fraud within the cryptocurrency space and addressing the societal embedding of a data science research question within the broader societal context.
 
 \section*{Declarations}
 
 \begin{itemize}
 \item AI tools
 
-Parts of the text in this paper have been written or enhanced with the assistance of ChatGPT \cite{OpenAI2024}.
+Parts of the text in this paper have been written or enhanced with the assistance of ChatGPT \citep{OpenAI2024}.
 
-\item Code availability 
+\item Code availability
+
+All code is available on \href{https://github.com/CryptoFraudDetection}{github.com/CryptoFraudDetection}.
+
 \item Author contribution
+
+All authors contributed equally to all aspects of this work.
+
 \end{itemize}
 
 \begin{appendices}
@@ -150,20 +174,6 @@ Parts of the text in this paper have been written or enhanced with the assistanc
 \section{Section title of first appendix}\label{secA1}
 
 An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
-
-%%=============================================%%
-%% For submissions to Nature Portfolio Journals %%
-%% please use the heading ``Extended Data''.   %%
-%%=============================================%%
-
-%%=============================================================%%
-%% Sample for another appendix section			       %%
-%%=============================================================%%
-
-%% \section{Example of another appendix section}\label{secA2}%
-%% Appendices may be used for helpful, supporting or essential material that would otherwise 
-%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
-%% tables and equations etc.
 
 \end{appendices}
 
