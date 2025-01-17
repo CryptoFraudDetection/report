@@ -3348,31 +3348,64 @@ FUNCTION {in.format.in.editors.trans}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+FUNCTION {extract.year.from.date}
+{ 'date.field :=
+  date.field empty$
+    { year }  % If date field is empty, use year field
+    { date.field
+      % Look for 4 consecutive digits
+      duplicate$ text.length$ 'len :=
+      "" 'year.part :=
+      #1 'pos :=
+        { pos len < }
+        { duplicate$ pos #4 substring$
+          duplicate$ "0000" >
+          duplicate$ "2999" < and
+            { 'year.part := 
+              #0 'pos :=  % Exit loop
+            }
+            { pop$ }
+          if$
+          pos #1 + 'pos :=
+        }
+      while$
+      pop$  % Remove original date string
+      year.part empty$
+        { year }  % If no year found in date, use year field
+        { year.part }
+      if$
+    }
+  if$
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 FUNCTION {format.year.check}
 { "\APACrefYear{"
-  protect.year *
-    %
-    % Add "a", "b", etc. when necessary.
-    %
+  date extract.year.from.date
+  duplicate$ empty$ 
+    { pop$ protect.year }
+    'skip$
+  if$
+  % Add "a", "b", etc. when necessary
   make.definitive.year.supplement *
   "}" *
 }
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 FUNCTION {format.year.month.day.check}
 { "\APACrefYearMonthDay{"
-  protect.year *
-    %
-    % Add "a", "b", etc. when necessary.
-    %
+  date extract.year.from.date
+  duplicate$ empty$
+    { pop$ protect.year }
+    'skip$
+  if$
+  % Add "a", "b", etc. when necessary
   make.definitive.year.supplement *
   "}{" *
-    %
-    % Add month and day when present.
-    %
+  % Add month and day when present
   month empty$
     'skip$
     { month * }
@@ -3384,6 +3417,7 @@ FUNCTION {format.year.month.day.check}
   if$
   "}" *
 }
+
 FUNCTION {format.year.nomonth.day.check}
 { "\APACrefYearMonthDay{"
   protect.year *
